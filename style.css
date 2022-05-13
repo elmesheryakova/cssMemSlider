@@ -1,0 +1,102 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 2rem);
+}
+
+.container {
+  max-width: 90rem;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.slider {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  border: 0.3rem solid blue;
+  border-radius: 0.4rem;
+}
+.slider__wrapper {
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  padding: 2rem 0;
+}
+
+.slide {
+  margin: 0;
+  flex: 0 0 100%;
+}
+
+.slide img {
+  width: 100%;
+  object-fit: contain;
+  height: 30rem;
+}
+#slide1:checked ~ .btns > #btn1 > .btn,
+#slide2:checked ~ .btns > #btn2 > .btn,
+#slide3:checked ~ .btns > #btn3 > .btn,
+#slide4:checked ~ .btns > #btn4 > .btn {
+  background-color: transparent;
+  border: 0.2rem solid blue;
+}
+
+#slide1:checked ~ .btns > #btn1:hover > .btn,
+#slide2:checked ~ .btns > #btn2:hover > .btn,
+#slide3:checked ~ .btns > #btn3:hover > .btn,
+#slide4:checked ~ .btns > #btn4:hover > .btn {
+  background-color: transparent;
+  border: 0.2rem solid green;
+}
+
+#slide1:checked ~ .slider__wrapper {
+  transform: translateX(0);
+}
+
+#slide2:checked ~ .slider__wrapper {
+  transform: translateX(-100%);
+}
+
+#slide3:checked ~ .slider__wrapper {
+  transform: translateX(-200%);
+}
+
+#slide4:checked ~ .slider__wrapper {
+  transform: translateX(-300%);
+}
+
+#slide1:checked ~ .slider__wrapper > :nth-child(1) .slide__text,
+#slide2:checked ~ .slider__wrapper > :nth-child(2) .slide__text,
+#slide3:checked ~ .slider__wrapper > :nth-child(3) .slide__text,
+#slide4:checked ~ .slider__wrapper > :nth-child(4) .slide__text {
+  display: inline-block;
+}
+.btns {
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+}
+.btn {
+  width: 1rem;
+  height: 1rem;
+  background-color: blue;
+  pointer-events: fill;
+  border-color: blue;
+  transition: all 0.5s ease-in-out;
+  border-radius: 50%;
+}
+input[type='radio'] {
+  display: none;
+}
+
+label {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+label:hover > .btn {
+  background-color: green;
+}
