@@ -49,17 +49,20 @@ body {
   opacity: 0;
   transform: translateY(-1rem);
   transition: all 2s;
-  font-size: 0.8rem;
   line-height: 0.8rem;
   max-width: 80%;
 }
-
+.slide__text.long {
+  font-size: 0.8rem;
+}
 #slide1:checked ~ .btns > #btn1 > .btn,
 #slide2:checked ~ .btns > #btn2 > .btn,
 #slide3:checked ~ .btns > #btn3 > .btn,
 #slide4:checked ~ .btns > #btn4 > .btn {
   background-color: transparent;
   border: 0.2rem solid #068d9e;
+  width: 0.5rem;
+  height: 0.5rem;
 }
 
 #slide1:checked ~ .btns > #btn1:hover > .btn,
@@ -96,14 +99,16 @@ body {
 }
 .btns {
   align-items: center;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1.9rem);
   margin-left: auto;
   background-color: #fff;
   padding: 0 1rem;
+  height: 2rem;
 }
 .btn {
-  width: 0.7rem;
-  height: 0.7rem;
+  width: 0.8rem;
+  height: 0.8rem;
   background-color: #068d9e;
   pointer-events: fill;
   border-color: #068d9e;
@@ -136,6 +141,11 @@ label:hover > .btn {
   .slide__text {
     max-width: 100%;
     padding: 1rem 0.8rem;
+    padding-top: 1.5rem;
+  }
+  .slide__text.long {
+    font-size: 1rem;
+    line-height: 1;
   }
 }
 @media (max-width: 28rem) {
@@ -143,6 +153,6 @@ label:hover > .btn {
     height: 120%;
   }
   .slide__text {
-    padding-top: 1.5rem;
+    padding-top: 2rem;
   }
 }
