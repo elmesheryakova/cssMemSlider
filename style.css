@@ -29,7 +29,6 @@ body {
 .slider__wrapper {
   transition: all 0.5s ease-in-out;
   display: flex;
-  padding: 1rem 0;
 }
 
 .slide {
@@ -42,6 +41,13 @@ body {
   object-fit: contain;
   height: 30rem;
 }
+.slide__text {
+  padding-left: 1.3rem;
+  opacity: 0;
+  transform: translateY(-1rem);
+  transition: all 2s;
+}
+
 #slide1:checked ~ .btns > #btn1 > .btn,
 #slide2:checked ~ .btns > #btn2 > .btn,
 #slide3:checked ~ .btns > #btn3 > .btn,
@@ -78,14 +84,17 @@ body {
 #slide2:checked ~ .slider__wrapper > :nth-child(2) .slide__text,
 #slide3:checked ~ .slider__wrapper > :nth-child(3) .slide__text,
 #slide4:checked ~ .slider__wrapper > :nth-child(4) .slide__text {
-  display: inline-block;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 2s;
 }
 .btns {
   align-items: center;
   display: flex;
-  justify-content: flex-end;
-  background: aliceblue;
-  width: 100%;
+  margin-left: auto;
+  background-color: #fff;
+  padding: 0 1rem;
+  transform: translateY(-2rem);
 }
 .btn {
   width: 1rem;
@@ -97,7 +106,8 @@ body {
   border-radius: 50%;
 }
 input[type='radio'] {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
 }
 
 label {
@@ -108,20 +118,3 @@ label {
 label:hover > .btn {
   background-color: rgb(19, 0, 128);
 }
-/* @media (max-width: 768px) {
-  #slide1:checked ~ .slider__wrapper {
-    transform: translateX(0);
-  }
-
-  #slide2:checked ~ .slider__wrapper {
-    transform: translateX(-99.5%);
-  }
-
-  #slide3:checked ~ .slider__wrapper {
-    transform: translateX(-199%);
-  }
-
-  #slide4:checked ~ .slider__wrapper {
-    transform: translateX(-298.9%);
-  }
-} */
