@@ -50,10 +50,11 @@ body {
   transform: translateY(-1rem);
   transition: all 2s;
   line-height: 0.8rem;
-  max-width: 80%;
+  max-width: 75%;
 }
 .slide__text.long {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  line-height: 0.7rem;
 }
 #slide1:checked ~ .btns > #btn1 > .btn,
 #slide2:checked ~ .btns > #btn2 > .btn,
@@ -100,11 +101,14 @@ body {
 .btns {
   align-items: center;
   display: grid;
-  grid-template-columns: repeat(4, 1.9rem);
+  grid-template-columns: repeat(4, 2.7rem);
+  transform: translateY(-1rem);
   margin-left: auto;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   background-color: #fff;
-  padding: 0 1rem;
-  height: 2rem;
+  padding: 0 0.4rem;
+  height: 3rem;
 }
 .btn {
   width: 0.8rem;
@@ -121,7 +125,9 @@ input[type='radio'] {
 }
 
 label {
-  padding: 0.4rem;
+  padding: 0.8rem;
+
+  margin: 0 auto;
   cursor: pointer;
 }
 
@@ -132,7 +138,7 @@ label:hover > .btn {
 @media (max-width: 48rem) {
   .btns {
     margin: 0 auto;
-    transform: translateY(-1rem);
+    transform: translateY(-1.5rem);
     background-color: transparent;
   }
   .slider {
@@ -141,7 +147,7 @@ label:hover > .btn {
   .slide__text {
     max-width: 100%;
     padding: 1rem 0.8rem;
-    padding-top: 1.5rem;
+    padding-top: 2rem;
   }
   .slide__text.long {
     font-size: 1rem;
@@ -153,6 +159,6 @@ label:hover > .btn {
     height: 120%;
   }
   .slide__text {
-    padding-top: 2rem;
+    padding-top: 2.6rem;
   }
 }
